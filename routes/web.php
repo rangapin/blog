@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+route::get('/articles', [PostController::class, 'index']);
+
+
+/* Route::get('/', function () {
+    return view('articles');
+}); */
+
+/* Route::get('/posts', function () { // slash is not necessary
+    return view('Liste d\'articles');
 });
+
+//return Json
+Route::get('/json', function () { // slash is not necessary
+    return response()->json([
+        'title' => 'my title',
+        'description' => 'my description'
+    ]);
+});
+//return another view
+Route::get('/articles', function () {
+    return view('articles');
+}); */
