@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 route::get('/articles', [PostController::class, 'index']);
+route::get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id');
+route::get('/contact', [PostController::class, 'contact']);
 
 
 /* Route::get('/', function () {
